@@ -1,0 +1,15 @@
+{
+  "name": "jsbin-jsfiddle",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "devDependencies": {
+    "webpack": "^1.13.3",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "scripts": {
+    "start": "webpack-dev-server --open"
+  },
+  "author": "",
+  "license": "ISC"
+}

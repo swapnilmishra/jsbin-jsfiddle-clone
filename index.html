@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <style>
+        body{
+            background-color: #eaefed;
+        }
+        .content-panes {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-flow: row wrap;
+        }
+        .content{
+            height: 300px;
+            width: 300px;
+            min-width: 100px;
+            margin-top: 50px;
+        }
+        iframe{
+            height: 300px;
+            width: 300px;
+            min-width: 100px;
+        }
+        button{
+            padding: 10px 30px 10px;
+            background-color :#ec4d4d;
+            color : #fff;
+            border: none;
+            margin-left: 10px;
+            margin-top: 100px;
+        }
+        textarea{
+            font-size: 16px;
+            padding: 5px;
+        }
+        #root{
+            /*display: none;*/
+            margin-top: 50px;
+            height: 300px;
+            width: 300px;
+            border: 1px solid #eaedef;
+            background-color: #fff;
+            box-sizing: border-box;
+            padding: 5px;
+        }
+        .output{
+            border: none;
+        }
+    </style>
+</head>
+<div class="content-panes">
+    <textarea class="content" id="htmlContent" placeholder="Add HTML here"></textarea>
+    <textarea class="content" id="cssContent" placeholder="Add CSS here"></textarea>
+    <textarea class="content" id="jsContent" placeholder="Add JS here"></textarea>
+    <div id="root">
+        <div>Output</div>
+    </div>
+</div>
+<button id="runBtn">Run</button>
+
+<script src="bundle.js"></script>
+
+</html>
