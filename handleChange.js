@@ -4,6 +4,16 @@ const htmlEl = document.querySelector("#htmlContent"),
     jsEl = document.querySelector('#jsContent'),
     cssEl = document.querySelector('#cssContent');
 
+const createEditor = function(){
+    CodeMirror.fromTextArea(htmlEl,{mode:"text/html"})
+    .on("change",handleHTMLChange);
+    
+    jsEditorEl = CodeMirror.fromTextArea(jsEl,{mode:"javascript"})
+    .on("change",handleJSChange);
+    
+    cssEditorEl = CodeMirror.fromTextArea(cssEl,{mode:"css"})
+    .on("change",handleCSSChange);
+}
 
 const addRunHandler = function(){
     const runBtn = document.querySelector("#runBtn")
@@ -17,6 +27,18 @@ const addRunHandler = function(){
         createFrame({html,js,css})
 
     });
+}
+
+const handleHTMLChange = function(el,{from, to, text, removed, origin}){
+    el.save()
+}
+
+const handleJSChange = function(el,{from, to, text, removed, origin}){
+    el.save()
+}
+
+const handleCSSChange = function(el,{from, to, text, removed, origin}){
+    el.save()
 }
 
 const getHTML = function(){
@@ -33,5 +55,6 @@ const getCSS = function(){
 
 
 module.exports = {
-    addRunHandler
+    addRunHandler,
+    createEditor
 }

@@ -10,12 +10,12 @@
             justify-content: space-around;
             align-items: center;
             flex-flow: row wrap;
+            margin-top: 50px;
         }
-        .content{
+        .content,.Codemirror{
             height: 300px;
             width: 300px;
             min-width: 100px;
-            margin-top: 50px;
         }
         iframe{
             height: 300px;
@@ -36,10 +36,9 @@
         }
         #root{
             /*display: none;*/
-            margin-top: 50px;
+            /*margin-top: 50px;*/
             height: 300px;
             width: 300px;
-            border: 1px solid #eaedef;
             background-color: #fff;
             box-sizing: border-box;
             padding: 5px;
@@ -48,13 +47,27 @@
             border: none;
         }
     </style>
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <script src="lib/codemirror.js"></script>
+    <script src="lib/javascript.js"></script>
+    <script src="lib/css.js"></script>
+    <script src="lib/xml.js"></script>
 </head>
 <div class="content-panes">
-    <textarea class="content" id="htmlContent" placeholder="Add HTML here"></textarea>
-    <textarea class="content" id="cssContent" placeholder="Add CSS here"></textarea>
-    <textarea class="content" id="jsContent" placeholder="Add JS here"></textarea>
+    <div>
+        <label>HTML</label>
+        <textarea class="content" id="htmlContent" placeholder="Add HTML here"></textarea>
+    </div>
+    <div>
+        <label>CSS</label>
+        <textarea class="content" id="cssContent" placeholder="Add CSS here"></textarea>
+    </div>
+    <div>
+        <label>Javascript</label>
+        <textarea class="content" id="jsContent" placeholder="Add JS here"></textarea>
+    </div>
     <div id="root">
-        <div>Output</div>
+        <label>Output</label>
     </div>
 </div>
 <button id="runBtn">Run</button>
