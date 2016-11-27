@@ -4,7 +4,35 @@ I have always wondered how tools like [jsbin](jsbin.com), [jsfiddle](https://jsf
 
 ![alt text](https://raw.githubusercontent.com/swapnilmishra/jsbin-jsfiddle-clone/master/screenshot/screen.png "Demo run screenshot")
 
-It basically boils down to creating an iframe and injecting the content(html,css,js) to update.
+### Show me some code
+
+It basically boils down to creating an iframe and injecting the content(html,css,js) to update. Below is the code from [createIframe.js](https://github.com/swapnilmishra/jsbin-jsfiddle-clone/blob/master/createIFrame.js) file which takes raw HTML,JS,CSS and create an iframe from it there by showing the output.
+
+```javascript
+let frameEl;
+let createFrame = function ({html,js,css}){
+    // memoize frame element
+    if(frameEl){
+        frameEl.remove()
+    }
+    frameEl = document.createElement('iframe')
+    const el = document.querySelector("#root")
+    frameEl.setAttribute("id","iframe")
+    frameEl.setAttribute("class","output")    
+    el.appendChild(frameEl)
+    const doc = document.querySelector('#iframe').contentWindow.document
+    const head = doc.querySelector("head")
+    doc.body.innerHTML = html;
+    head.appendChild(createEl('script',js))
+    head.appendChild(createEl('style',css))
+}
+
+let createEl = function(type,innerhtml){
+    const el = document.createElement(type)
+    el.innerHTML = innerhtml
+    return el;
+}
+```
 
 ### How to run
 
