@@ -2,7 +2,7 @@
 
 I have always wondered how tools like [jsbin](jsbin.com), [jsfiddle](https://jsfiddle.net) or [dabblet](http://dabblet.com/) work. So, thought of putting together some code to do the same.
 
-![alt text](https://raw.githubusercontent.com/swapnilmishra/jsbin-jsfiddle-clone/master/screenshot/screen.png "Demo run screenshot")
+![alt text](https://raw.githubusercontent.com/swapnilmishra/jsbin-jsfiddle-clone/master/screenshot/screen.gif "Demo run screenshot")
 
 ### Show me some code
 
