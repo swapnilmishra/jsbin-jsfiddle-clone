@@ -1,77 +1,51 @@
 <html>
 
 <head>
-    <style>
-        body{
-            background-color: #eaefed;
-        }
-        .content-panes {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-flow: row wrap;
-            margin-top: 50px;
-        }
-        .content,.Codemirror{
-            height: 300px;
-            width: 300px;
-            min-width: 100px;
-        }
-        iframe{
-            height: 300px;
-            width: 300px;
-            min-width: 100px;
-        }
-        button{
-            padding: 10px 30px 10px;
-            background-color :#ec4d4d;
-            color : #fff;
-            border: none;
-            margin-left: 10px;
-            margin-top: 100px;
-        }
-        textarea{
-            font-size: 16px;
-            padding: 5px;
-        }
-        #root{
-            /*display: none;*/
-            /*margin-top: 50px;*/
-            height: 300px;
-            width: 300px;
-            background-color: #fff;
-            box-sizing: border-box;
-            padding: 5px;
-        }
-        .output{
-            border: none;
-        }
-    </style>
+    <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="lib/material.css">
     <script src="lib/codemirror.js"></script>
     <script src="lib/javascript.js"></script>
     <script src="lib/css.js"></script>
     <script src="lib/xml.js"></script>
 </head>
 <div class="content-panes">
-    <div>
-        <label>HTML</label>
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
         <textarea class="content" id="htmlContent" placeholder="Add HTML here"></textarea>
     </div>
-    <div>
-        <label>CSS</label>
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
         <textarea class="content" id="cssContent" placeholder="Add CSS here"></textarea>
     </div>
-    <div>
-        <label>Javascript</label>
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
         <textarea class="content" id="jsContent" placeholder="Add JS here"></textarea>
     </div>
-    <div id="root">
-        <label>Output</label>
+    <div class="flex-item output-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <div id="root">
+        </div>
     </div>
 </div>
-<button id="runBtn">Run</button>
+<!--<button id="runBtn">Run</button>-->
 
-<script src="bundle.js"></script>
+<script src="dist/bundle.js"></script>
 
 </html>
