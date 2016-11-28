@@ -1,16 +1,15 @@
-let debounce = function(func,timeout){
+let debounce = (originalFunction,timeout) => {
   let debounced = false;
-  return function(){
+  return( function() {
    let args = arguments;
     if(!debounced){
       debounced = true;
-      setTimeout(function(){
-        func.apply(undefined,args)
+      setTimeout( () => {
+        originalFunction.apply(undefined,args)
         debounced = false;
       },timeout)
     }
-  }
-
+  });
 }
 
 

@@ -1,5 +1,5 @@
 const createFrame = require('./createIFrame').createFrame;
-const initValue = require('./initValue');
+const {jsValue,htmlValue,cssValue} = require('./initValue');
 const {debounce} = require('./debounce');
 
 let jsEditorEl,cssEditorEl,htmlEditorEl
@@ -13,17 +13,17 @@ const createEditor = function(){
     htmlEditorEl = CodeMirror.fromTextArea(htmlEl,{mode:"text/html",theme:'material'})
     
     htmlEditorEl.on("change",handleHTMLChange);
-    htmlEditorEl.doc.setValue(initValue.htmlValue)
+    htmlEditorEl.doc.setValue(htmlValue)
     
     jsEditorEl = CodeMirror.fromTextArea(jsEl,{mode:"javascript",theme:'material'})
     
     jsEditorEl.on("change",saveAndRender);
-    jsEditorEl.doc.setValue(initValue.jsValue)
+    jsEditorEl.doc.setValue(jsValue)
     
     cssEditorEl = CodeMirror.fromTextArea(cssEl,{mode:"css",theme:'material'})
     
     cssEditorEl.on("change",handleCSSChange);
-    cssEditorEl.doc.setValue(initValue.cssValue)
+    cssEditorEl.doc.setValue(cssValue)
 }
 
 const renderPage = () => {
@@ -35,35 +35,35 @@ const renderPage = () => {
 
 }
 
-const handleHTMLChange = function(el,{from, to, text, removed, origin}){
+const handleHTMLChange = (el,{from, to, text, removed, origin}) => {
     el.save()
     renderPage()
 }
 
-const handleJSChange = function(el,{from, to, text, removed, origin}){
+const handleJSChange = (el,{from, to, text, removed, origin}) => {
     el.save()
     renderPage()
 }
 
-const handleCSSChange = function(el,{from, to, text, removed, origin}){
+const handleCSSChange = (el,{from, to, text, removed, origin}) => {
     el.save()
     renderPage()
 }
 
-const saveAndRender = debounce(function(el,{from, to, text, removed, origin}){
+const saveAndRender = debounce((el,{from, to, text, removed, origin}) => {
     el.save()
     renderPage()
 },3000)
 
-const getHTML = function(){
+const getHTML = () => {
     return htmlEl.value;
 }
 
-const getJS = function(){
+const getJS = () => {
     return jsEl.value;
 }
 
-const getCSS = function(){
+const getCSS = () => {
     return cssEl.value;
 }
 

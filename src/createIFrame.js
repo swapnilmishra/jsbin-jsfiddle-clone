@@ -1,5 +1,5 @@
 let frameEl;
-let createFrame = function ({html,js,css}){
+let createFrame = ({html,js,css}) => {
     // memoize frame element
     if(frameEl){
         frameEl.remove()
@@ -16,7 +16,7 @@ let createFrame = function ({html,js,css}){
     head.appendChild(createEl('style',css))
 }
 
-let createEl = function(type,innerhtml){
+let createEl = (type,innerhtml) => {
     const el = document.createElement(type)
     el.innerHTML = innerhtml
     return el;
