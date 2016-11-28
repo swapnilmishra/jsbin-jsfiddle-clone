@@ -28,6 +28,7 @@ body{
     height: 300px;
     width: 350px;
     min-width: 100px;
+    font-size: 14px;
 }
 iframe{
     height: 300px;
