@@ -1,5 +1,6 @@
 const createFrame = require('./createIFrame').createFrame;
 const initValue = require('./initValue');
+const {debounce} = require('./debounce');
 
 let jsEditorEl,cssEditorEl,htmlEditorEl
 
@@ -13,31 +14,19 @@ const createEditor = function(){
     
     htmlEditorEl.on("change",handleHTMLChange);
     htmlEditorEl.doc.setValue(initValue.htmlValue)
-    // htmlEditorEl.doc.save();
     
     jsEditorEl = CodeMirror.fromTextArea(jsEl,{mode:"javascript",theme:'material'})
     
-    jsEditorEl.on("change",handleJSChange);
+    jsEditorEl.on("change",saveAndRender);
     jsEditorEl.doc.setValue(initValue.jsValue)
-    // htmlEditorEl.doc.save();
     
     cssEditorEl = CodeMirror.fromTextArea(cssEl,{mode:"css",theme:'material'})
     
     cssEditorEl.on("change",handleCSSChange);
     cssEditorEl.doc.setValue(initValue.cssValue)
-    // htmlEditorEl.doc.save();
-}
-
-const addRunHandler = function(){
-    // const runBtn = document.querySelector("#runBtn")
-    // runBtn.addEventListener("click",renderPage);
 }
 
 const renderPage = () => {
-    // if(evt){
-    //     evt.stopPropagation()
-    //     evt.preventDefault()
-    // }
     const html = getHTML(),
     js = getJS(),
     css = getCSS();
@@ -61,6 +50,11 @@ const handleCSSChange = function(el,{from, to, text, removed, origin}){
     renderPage()
 }
 
+const saveAndRender = debounce(function(el,{from, to, text, removed, origin}){
+    el.save()
+    renderPage()
+},3000)
+
 const getHTML = function(){
     return htmlEl.value;
 }
@@ -75,7 +69,6 @@ const getCSS = function(){
 
 
 module.exports = {
-    addRunHandler,
     createEditor,
     renderPage
 }
