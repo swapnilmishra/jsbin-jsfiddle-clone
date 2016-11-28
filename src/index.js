@@ -1,3 +1,3 @@
-const handleJS = require('./handleChange');
-handleJS.createEditor()
-handleJS.renderPage()
+const {createEditor,renderPage} = require('./handleChange');
+createEditor()
+renderPage()

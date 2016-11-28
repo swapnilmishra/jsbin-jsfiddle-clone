@@ -1,4 +1,4 @@
-const createFrame = require('./createIFrame').createFrame;
+const {createFrame} = require('./createIFrame');
 const {jsValue,htmlValue,cssValue} = require('./initValue');
 const {debounce} = require('./debounce');
 
