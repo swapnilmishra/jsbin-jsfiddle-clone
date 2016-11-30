@@ -1,0 +1,89 @@
+body{
+    background: linear-gradient(#795548, rgb(230, 177, 111));
+}
+.content-panes {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    flex-flow: row wrap;
+}
+.output-item{
+    min-width: 350px;
+}
+.flex-item{
+    margin-top: 10px;
+}
+.Codemirror{
+    height: 300px;
+    width: 350px;
+    min-width: 100px;
+    font-size: 14px;
+}
+iframe{
+    height: 300px;
+}
+#root{
+    height: 300px;
+    background-color: #fff;
+    box-sizing: border-box;
+}
+.output{
+    border: none;
+}
+
+.fakeButtons {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  border: 1px solid #000;
+  position: relative;
+  top: 6px;
+  left: 6px;
+  background-color: #ff3b47;
+  border-color: #9d252b;
+  display: inline-block;
+}
+
+.fakeMinimize {
+  left: 11px;
+  background-color: #ffc100;
+  border-color: #9d802c;
+}
+
+.fakeZoom {
+  left: 16px;
+  background-color: #00d742;
+  border-color: #049931;
+}
+
+.fakeMenu {
+  width: 350px;
+  box-sizing: border-box;
+  height: 25px;
+  background-color: #bbb;
+  margin: 0 auto;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+@media all and (min-width: 1070px) {
+    .fakeMenu{
+        width: 100%;
+    }
+    .output-item{
+        flex-grow: 3;
+        flex-basis: auto;
+    }
+}
+
+@media all and (max-width: 1070px){
+    .content-panes{
+        flex-flow: column wrap;
+        align-items: stretch;
+    }
+    .Codemirror{
+        width : 100%;
+    }
+    .fakeMenu{
+        width: 100%;
+    }
+}

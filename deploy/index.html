@@ -1,0 +1,51 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="lib/codemirror.css">
+    <link rel="stylesheet" href="lib/material.css">
+    <script src="lib/codemirror.js"></script>
+    <script src="lib/javascript.js"></script>
+    <script src="lib/css.js"></script>
+    <script src="lib/xml.js"></script>
+</head>
+<div class="content-panes">
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <textarea class="content" id="htmlContent" placeholder="Add HTML here"></textarea>
+    </div>
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <textarea class="content" id="cssContent" placeholder="Add CSS here"></textarea>
+    </div>
+    <div class="flex-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <textarea class="content" id="jsContent" placeholder="Add JS here"></textarea>
+    </div>
+    <div class="flex-item output-item">
+        <div class=fakeMenu>
+            <div class="fakeButtons fakeClose"></div>
+            <div class="fakeButtons fakeMinimize"></div>
+            <div class="fakeButtons fakeZoom"></div>
+        </div>
+        <div id="root">
+        </div>
+    </div>
+</div>
+<!--<button id="runBtn">Run</button>-->
+
+<script src="dist/bundle.js"></script>
+
+</html>
