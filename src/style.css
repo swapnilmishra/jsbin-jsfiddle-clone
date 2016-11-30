@@ -10,17 +10,6 @@ body{
 .output-item{
     min-width: 350px;
 }
-@media all and (min-width: 1070px) {
-    .output-item{
-        flex-grow: 3;
-        flex-basis: auto;
-    }
-}
-@media all and (max-width: 1070px){
-    .content-panes{
-        flex-flow: column wrap;
-    }
-}
 .flex-item{
     margin-top: 10px;
 }
@@ -77,7 +66,24 @@ iframe{
   border-top-left-radius: 5px;
 }
 @media all and (min-width: 1070px) {
- .fakeMenu{
+    .fakeMenu{
+        width: 100%;
+    }
+    .output-item{
+        flex-grow: 3;
+        flex-basis: auto;
+    }
+}
+
+@media all and (max-width: 1070px){
+    .content-panes{
+        flex-flow: column wrap;
+        align-items: stretch;
+    }
+    .Codemirror{
+        width : 100%;
+    }
+    .fakeMenu{
         width: 100%;
     }
 }
